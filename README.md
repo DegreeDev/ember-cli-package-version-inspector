@@ -1,24 +1,38 @@
-ember-cli-package-version-inspector
-==============================================================================
+# ember-cli-package-version-inspector
 
-[Short description of the addon.]
+This is an addon to help keep track of what other packages are being deployed to your environments. I use this in conjunction with Ember Engines to keep track of what versions of engines are deployed to a specific environment.
 
-Installation
-------------------------------------------------------------------------------
+## Installation
 
 ```
 ember install ember-cli-package-version-inspector
 ```
 
+## Usage
 
-Usage
-------------------------------------------------------------------------------
+```
+//config/environment.js
 
-[Longer description of how to use the addon in apps.]
+...
+'package-version-inspector': {
+  include: [
+    'ember-engines',
+    'search-engine',
+    'discovery-engine',
+    'asset-engine',
+    'company-components'
+  ]
+}
+...
+```
 
+* Open your Ember Inspector
+* Navigate to 'Info'
+* Notice the specified packages are listed with their versions.
 
-Contributing
-------------------------------------------------------------------------------
+**_Note:_** These are the package version specified in the `package.json`
+
+## Contributing
 
 ### Installation
 
@@ -44,7 +58,6 @@ Contributing
 
 For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
 
-License
-------------------------------------------------------------------------------
+## License
 
 This project is licensed under the [MIT License](LICENSE.md).
